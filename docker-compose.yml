@@ -1,0 +1,28 @@
+services:
+  valentinesday_mongodb:
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      
+  valentinesday_app:
+    build: .
+    ports:
+      - "1337:1337"
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    depends_on:
+      - valentinesday_mongodb
+    environment:
+      - MONGODB_URI=mongodb://admin:password@valentinesday_mongodb:27017/?authSource=admin
+      - BOT_TOKEN=
+      - GEMINI_API=
+      - ADMIN_ID=
+
+volumes:
+  mongodb_data:
