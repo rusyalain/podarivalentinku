@@ -1,4 +1,3 @@
-// repositories/base_repository.ts
 import { Collection, Database, Document, ObjectId } from "../deps.ts";
 import type { Filter } from "https://deno.land/x/mongo@v0.33.0/mod.ts";
 
