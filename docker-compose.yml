@@ -1,0 +1,29 @@
+services:
+  podarivalentinku_mongodb:
+    image: mongo:latest
+    ports:
+      # порт бд вне контейнера
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+
+  podarivalentinku_app:
+    build: .
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    depends_on:
+      - podarivalentinku_mongodb
+    environment:
+      - GEMINI_AI_MODEL=
+      - GEMINI_API_KEY=
+      - TG_ADMIN_ID=
+      - TG_BOT_TOKEN=
+      # тут внимательно, без /?authSource=admin у меня не коннектилось
+      - MONGODB_URI=mongodb://admin:password@podarivalentinku_mongodb:27017/?authSource=admin
+
+volumes:
+  mongodb_data:
