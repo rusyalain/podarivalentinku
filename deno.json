@@ -1,5 +1,9 @@
 {
   "imports": {
     "@google/generative-ai": "npm:@google/generative-ai@^0.24.0"
+  },
+  "tasks": {
+    "dev": "deno run -A --unstable-ffi --env-file=.env.dev src/bot.ts",
+    "debug": "deno run -A --unstable-ffi --env-file=.env.dev --inspect-wait src/bot.ts"
   }
 }

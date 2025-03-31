@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "request": "launch",
+      "name": "debug",
+      "type": "node",
+      "program": "${workspaceFolder}/src/bot.ts",
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "runtimeExecutable": "deno",
+      "runtimeArgs": [
+        "task",
+        "debug"
+      ],
+      "attachSimplePort": 9229
+    }
+  ]
+}
