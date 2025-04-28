@@ -5,14 +5,11 @@
       "request": "launch",
       "name": "debug",
       "type": "node",
-      "program": "${workspaceFolder}/src/bot.ts",
+      "program": "task debug",
       "cwd": "${workspaceFolder}",
       "env": {},
       "runtimeExecutable": "deno",
-      "runtimeArgs": [
-        "task",
-        "debug"
-      ],
+      "runtimeArgs": [],
       "attachSimplePort": 9229
     }
   ]
