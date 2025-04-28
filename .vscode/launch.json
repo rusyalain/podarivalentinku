@@ -5,11 +5,11 @@
       "request": "launch",
       "name": "debug",
       "type": "node",
-      "program": "task debug",
+      "program": "",
       "cwd": "${workspaceFolder}",
       "env": {},
       "runtimeExecutable": "deno",
-      "runtimeArgs": [],
+      "runtimeArgs": ["task", "debug"],
       "attachSimplePort": 9229
     }
   ]
