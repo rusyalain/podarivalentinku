@@ -1,6 +1,8 @@
 
 # podarivalentinku
 
+https://deepwiki.com/rusyalain/podarivalentinku
+
 школьный проект, бот в телеграмме, посвящённый безымённому празднику
 
 ## зачем?
